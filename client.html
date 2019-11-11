@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        #drawzone_container {
+            height: 40em;
+            width: 85%;
+            margin-bottom: 1em;
+            margin-left: 15%;
+            border: 2px solid black;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 1em;
+        }
+
+        #drop_canvas {
+            background-color: silver;
+            float: left;
+            height: 100%;
+            width: 80%;
+        }
+
+        #sidebar_div {
+            background-color: rgb(235, 235, 118);
+            float: left;
+            height: 100%;
+            width: 20%;
+            text-align: center
+        }
+
+        .bottom-margin {
+            margin-bottom: 1em;
+        }
+
+        .clear {
+            clear: left;
+        }
+
+        #red_div {
+            margin-top: 5em;
+        }
+
+        .cursor_pointer {
+            cursor: pointer;
+        }
+
+        .tb_height{
+            height: 20px;
+        }
+
+        #save_button {
+            width: 100px;
+            height: 40px;
+            background-color: gray;
+            color: white;
+        }
+    </style>
+
+    <script src="./client.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
+
+    <div id="drawzone_container">
+        <div id="drop_canvas" ondragover="onDragOver(event)" ondrop="onCanvasDrop(event)">
+        </div>
+
+        <div id="sidebar_div" ondragover="onDragOver(event)" ondrop="onSidebarDrop(event)">
+            <div id="red_div" class="bottom-margin">
+                <input id="red_TB" class="cursor_pointer tb_height" style="background-color: red" draggable="true" type="text"
+                    readonly ondragstart="onTextboxDrag(event)" ondragend="onTextboxDragEnd(event)" />
+            </div>
+
+            <div id="green_div" class="bottom-margin">
+                <input id="green_TB" class="cursor_pointer tb_height" style="background-color: green" draggable="true" type="text"
+                    readonly ondragstart="onTextboxDrag(event)" ondragend="onTextboxDragEnd(event)" />
+            </div>
+
+            <div id="blue_div">
+                <input id="blue_TB" class="cursor_pointer tb_height" style="background-color: blue" draggable="true" type="text"
+                    readonly ondragstart="onTextboxDrag(event)" ondragend="onTextboxDragEnd(event)" />
+            </div>
+
+        </div>
+
+        <div class="clear"></div>
+
+
+        <footer>
+            <button id="save_button" class="cursor_pointer" onclick="onSaveClick(event)"> SAVE </button>
+        </footer>
+    </div>
+
+</body>
+
+</html>
